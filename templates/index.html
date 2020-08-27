@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th> Symbol</th>
+            <th> Name</th>
+            <th> Shares</th>
+            <th> Price</th>
+            <th> Total Value</th>
+        </tr>
+    </thead>
+
+{% for row in rows %}
+    <tr>
+
+        {% if row["SUM(shares)"] > 0 %}
+        <td>{{ row["symbol"] }}</td>
+        <td>{{ row["name"] }}</td>
+        <td>{{ row["SUM(shares)"]   }}</td>
+        <td>{{ row["price"] }}</td>
+        <td>{{ row["value"] }}</td>
+        {% endif %}
+
+{% endfor %}
+
+         <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ cash_balance }}</td>
+        </tr>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td><b>{{ total_value}}</b></td>
+            </tr>
+        </tfoot>
+    </tr>
+</table>
+
+{% endblock %}

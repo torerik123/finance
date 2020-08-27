@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+        <button onclick="changepassword()" id="submit" class="btn btn-primary" href="/change_password" type="submit">Change password</button>
+        <button onclick="cash()"id="submit" class="btn btn-primary" type="submit">Add more cash</button>
+
+    <script>
+        function changepassword() {
+  location.replace("/change_password")
+}
+
+function cash() {
+  location.replace("/cash")
+}
+    </script>
+{% endblock %}

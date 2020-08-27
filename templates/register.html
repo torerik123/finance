@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input id="username" autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input id="password" class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input id="password2" class="form-control" name="password2" placeholder="Password(again)" type="password">
+        </div>
+
+        <button id="submit" class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <script>
+        <!--Disable submit button by default-->
+        document.querySelector('#submit').disabled = true;
+
+        <!--Disable submit button by if any fields are left blank-->
+        <!--Username-->
+        document.querySelector('#username').onkeyup = function () {
+            if (document.querySelector('#username').value !== '' && document.querySelector('#password').value !== '' ) {
+                document.querySelector('#submit').disabled = false;
+            } else {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+
+        <!--Password-->
+        document.querySelector('#password').onkeyup = function () {
+            if (document.querySelector('#username').value !== '' && document.querySelector('#password').value !== '' ) {
+                document.querySelector('#submit').disabled = false;
+            } else {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+
+        <!--Second password field-->
+        document.querySelector('#password2').onkeyup = function () {
+            if (document.querySelector('#username').value !== '' && document.querySelector('#password').value !== '' && document.querySelector('#password2').value !== '' ) {
+                document.querySelector('#submit').disabled = false;
+            } else {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+
+    </script>
+{% endblock %}

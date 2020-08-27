@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<form action="/quote" method="post">
+        <div class="form-group">
+            <input id="symbol" autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text">
+        </div>
+        <button id="submit" class="btn btn-primary" type="submit">Get quote</button>
+    </form>
+    <script>
+        <!--Disable submit button by default-->
+            document.querySelector('#submit').disabled = true;
+
+
+        document.querySelector('#symbol').onkeyup = function () {
+            if (document.querySelector('#symbol').value !== '') {
+                document.querySelector('#submit').disabled = false;
+            } else {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+     </script>
+
+{% endblock %}
