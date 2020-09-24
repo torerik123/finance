@@ -12,3 +12,7 @@ Index
 Buy shares
 
 ![Buy](https://i.ibb.co/MPBP3wQ/Buy.jpg)
+
+History
+
+![History](https://i.ibb.co/Kwk1w9Z/history.jpg) 
