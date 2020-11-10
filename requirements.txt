@@ -1,6 +1,6 @@
 cs50
-Flask
-Flask-Session
-requests
 gunicorn
+flask
+flask_session
+requests
 psycopg2
